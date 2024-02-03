@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <style>
+        body {
+            font-family: Calibri, Helvetica, sans-serif;
+            background-color: turquoise;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            width: 400px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            margin-bottom: 5px;
+            color: #333;
+        }
+        input[type="text"],
+        input[type="password"] {
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            padding: 10px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        .message {
+            color: red;
+            text-align: center;
+        }
+        p {
+            text-align: center;
+        }
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Login Page</h1>
+        <form action="{{url_for('login')}}" method="POST">
+            <div class="message">{{ message }}</div>
+            <label for="username"><b>User Name :</b></label>
+            <input id="username" name="username" type="text" placeholder="User Name" autocomplete="off">
+            <label for="password"><b>Password :</b></label>
+            <input id="password" name="password" type="password" placeholder="Password" autocomplete="off">
+            <button id="submit" name="submit"><b>Sign in</b></button>
+        </form>
+        <p><b>Don't have an account? Please click <a href="{{url_for('registration')}}">here to sign up</b></a></p>
+    </div>
+</body>
+</html>
+
